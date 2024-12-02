@@ -1,15 +1,14 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Provas ITA</title>
-    <link rel="stylesheet" href="styles1.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
-    <img src="logoita.png" alt="ITA" class="logo">     
-        
+        <img src="logoita.png" alt="ITA" class="logo">
         <h1>Provas do ITA</h1>
     </header>
 
@@ -17,17 +16,11 @@
         <section class="year-selection">
             <h2>Selecione o ano da prova:</h2>
             <div class="buttons">
-                
-           
-<button onclick="redirectToYear(2021)">2021</button>
-                
-       
-<button onclick="redirectToYear(2022)">2022</button>
-                <button onclick="redirectToYear(2023)">2023</button>
+                <button class="year-btn" onclick="redirectToYear(2021)">2021</button>
+                <button class="year-btn" onclick="redirectToYear(2022)">2022</button>
+                <button class="year-btn" onclick="redirectToYear(2023)">2023</button>
             </div>
-        
-        <
-</section>
+        </section>
     </main>
 
     <footer>
@@ -36,8 +29,22 @@
 
     <script>
         function redirectToYear(year) {
-            window.location.href = `provas/ita_${year}.html`;
+            // Exibe uma mensagem de carregamento
+            const buttons = document.querySelectorAll('.year-btn');
+            buttons.forEach(button => {
+                button.disabled = true;  // Desabilita os botões durante o carregamento
+            });
+            
+            document.querySelector('main').innerHTML = `<h2>Carregando a prova de ${year}...</h2>`;  // Exibe mensagem enquanto redireciona
+
+            // Redireciona após 1 segundo, para simular o carregamento
+            setTimeout(() => {
+                window.location.href = `provas/ita_${year}.html`;
+            }, 1000);  // Simula tempo de carregamento de 1 segundo
         }
     </script>
 </body>
 </html>
+
+        
+
