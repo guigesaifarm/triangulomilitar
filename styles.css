@@ -87,4 +87,10 @@ footer p {
     max-width: 100%;
     height: auto;
 }
+.logo1 {
+    display: block;
+    margin: 20px auto;
+    max-width: 100%;
+    height: auto;
+}
 
