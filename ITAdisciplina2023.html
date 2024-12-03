@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disciplinas - Provas ITA 2023</title>
+    <link rel="stylesheet" href="styles1.css">
+</head>
+<body>
+    <header>
+        <img src="logoita.png" alt="ITA" class="logo">
+        <h1>Disciplinas - ITA 2023</h1>
+    </header>
+
+    <main>
+        <section class="discipline-selection">
+            <h2>Selecione a disciplina:</h2>
+            <div class="buttons">
+                <button class="discipline-btn" onclick="redirectToDiscipline('Matemática')">Matemática</button>
+                <button class="discipline-btn" onclick="redirectToDiscipline('Física')">Física</button>
+                <button class="discipline-btn" onclick="redirectToDiscipline('Química')">Química</button>
+                <!-- Adicione mais disciplinas conforme necessário -->
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Triângulo Militar. Todos os direitos reservados.</p>
+    </footer>
+
+    <script>
+        function redirectToDiscipline(discipline) {
+            // Exibe uma mensagem de carregamento
+            const buttons = document.querySelectorAll('.discipline-btn');
+            buttons.forEach(button => {
+                button.disabled = true;  // Desabilita os botões durante o carregamento
+            });
+
+            document.querySelector('main').innerHTML = `<h2>Carregando provas de ${discipline}...</h2>`;  // Exibe mensagem enquanto redireciona
+
+            // Redireciona após 1 segundo, para simular o carregamento
+            setTimeout(() => {
+                window.location.href = `provas/ita_2023_${discipline}.html`;  // Redireciona para a página da disciplina específica
+            }, 1000);  // Simula tempo de carregamento de 1 segundo
+        }
+    </script>
+</body>
+</html>
+
+
