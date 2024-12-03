@@ -35,16 +35,17 @@
                 button.disabled = true;  // Desabilita os botões durante o carregamento
             });
             
-            document.querySelector('main').innerHTML = `<h2>Carregando a prova de ${year}...</h2>`;  // Exibe mensagem enquanto redireciona
+            document.querySelector('main').innerHTML = `<h2>Carregando as disciplinas de ${year}...</h2>`;  // Exibe mensagem enquanto redireciona
 
             // Redireciona após 1 segundo, para simular o carregamento
             setTimeout(() => {
-                window.location.href = `provas/ita_${year}.html`;
+                window.location.href = `disciplinas_${year}.html`;  // Redireciona para a página de disciplinas
             }, 1000);  // Simula tempo de carregamento de 1 segundo
         }
     </script>
 </body>
 </html>
+
 
         
 
