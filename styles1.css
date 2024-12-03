@@ -78,3 +78,9 @@ h2 {
     color: #2c3e50;
     font-size: 1.2rem;
 }
+.logo {
+    display: block;
+    margin: 20px auto;
+    max-width: 150%;
+    height: auto;
+}
